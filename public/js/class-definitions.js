@@ -478,8 +478,12 @@ Person.prototype.earnMoney = function(price) {
  * @return {Number}
  *
  */
-function purchaseLaptop (laptp) {
-  
+function purchaseLaptop (laptop) {
+  if (laptopCosts[laptop] !==undefined) {
+    return laptopCosts[laptop].toString();
+  }else {
+    return -1;
+  }
 }
 
 /* Step 29
