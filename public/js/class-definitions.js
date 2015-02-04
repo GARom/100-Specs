@@ -459,13 +459,14 @@ function Person (name, money, age, gender) {
   this.gender = gender; 
 
 }
+
 Person.prototype.spendMoney = function (price) {
   this.money = this.money - price;
-}
+};
 
 Person.prototype.earnMoney = function(price) {
   this.money = this.money + price;
-}
+};
 /* Step 28
  *
  * Define a function named "purchaseLaptop" that takes
@@ -477,7 +478,9 @@ Person.prototype.earnMoney = function(price) {
  * @return {Number}
  *
  */
-
+function purchaseLaptop (laptp) {
+  
+}
 
 /* Step 29
  *
