@@ -570,7 +570,7 @@ Garden.prototype.grow = function() {
     this.plantsTotal++;
     this.isWatered = false;
   }
-}
+};
 /* Step 32
  *
  * Define a class named "SolarSystem" with a property
