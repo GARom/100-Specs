@@ -316,8 +316,8 @@ function addNumbers (Number, Numb) {
  * @return {Bool}
  *
  */
-function installLinux (distros) {
-  return linuxFlavors.indexOf(distros) !== -1;
+function installLinux (distro) {
+  return linuxFlavors.indexOf(distro) !== -1;
 }
 
 /* Step 23
@@ -337,7 +337,23 @@ function installLinux (distros) {
  * @return {Bool when False, String when True}
  *
  */
+function drink(beerType) {
+  resultBeer = false;
 
+  if (beers[beerType] !== undefined){
+    resultBeer = "This " + beerType + " is "; 
+    if (beers[beerType] instanceof (Array)) {
+      beers[beerType].map(function(current) {
+        resultBeer = resultBeer + current + " and ";
+      });
+      resultBeer = resultBeer.slice(0, -5);
+    }else {
+      resultBeer = resultBeer + beers[beerType];
+    }
+    resultBeer = resultBeer + ".";
+  }
+  return resultBeer;
+}
 
 /* Step 24
  *
@@ -350,7 +366,12 @@ function installLinux (distros) {
  * @return {String}
  *
  */
-
+function browseURL (bro) {
+  if (bro instanceof browsers) {
+    
+    return Object.keys[browsers]; 
+  }
+}
 
 /* Step 25
  *
@@ -361,7 +382,9 @@ function installLinux (distros) {
  * @return {String}
  *
  */
+function listLivingOrgClass () {
 
+}
 
 /* Step 26
  *
