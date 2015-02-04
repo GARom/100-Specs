@@ -342,11 +342,10 @@ function drink(beerType) {
 
   if (beers[beerType] !== undefined){
     resultBeer = "This " + beerType + " is "; 
-    if (beers[beerType] instanceof (Array)) {
-      beers[beerType].map(function(current) {
-        resultBeer = resultBeer + current + " and ";
-      });
-      resultBeer = resultBeer.slice(0, -5);
+    if (beers[beerType] instanceof Array) {
+      beers[beerType].map(function(moreDescriptions) {
+        resultBeer = resultBeer + moreDescriptions + " and ";
+      });    
     }else {
       resultBeer = resultBeer + beers[beerType];
     }
@@ -367,9 +366,11 @@ function drink(beerType) {
  *
  */
 function browseURL (bro) {
-  if (bro instanceof browsers) {
+  if (browsers[bro] === undefined) {
     
-    return Object.keys[browsers]; 
+    return false; 
+  }else {
+    return browsers[bro]
   }
 }
 
