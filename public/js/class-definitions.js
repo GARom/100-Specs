@@ -277,7 +277,7 @@ var beers = {
           "Light",
           "Golden"
           ]
-}
+};
 
 /* Step 20
  *
@@ -287,7 +287,9 @@ var beers = {
  * @return {String}
  *
  */
-
+function sahara_river () {
+  return 'Nile River';
+}
 
 /* Step 21
  *
