@@ -338,13 +338,13 @@ function installLinux (distro) {
  *
  */
 function drink(beerType) {
-  resultBeer = false;
+var resultBeer = false;
 
   if (beers[beerType] !== undefined){
     resultBeer = "This " + beerType + " is "; 
     if (beers[beerType] instanceof Array) {
       beers[beerType].map(function(moreDescriptions) {
-        resultBeer = resultBeer + moreDescriptions + " and ";
+        resultBeer = resultBeer + moreDescriptions + " and " ;
       });    
     }else {
       resultBeer = resultBeer + beers[beerType];
@@ -370,7 +370,7 @@ function browseURL (bro) {
     
     return false; 
   }else {
-    return browsers[bro]
+    return browsers[bro];
   }
 }
 
@@ -383,7 +383,16 @@ function browseURL (bro) {
  * @return {String}
  *
  */
-function listLivingOrgClass () {
+function listLivingOrgClass (item) {
+  var stringVersion = "";
+
+
+
+  for (i = 0; i < livingOrganismClassification.length; i++) {
+    stringVersion += "<li>" + livingOrganismClassification[i] + "</li>";
+
+  }
+  return "<ul>" + stringVersion + "</ul>";
 
 }
 
@@ -406,7 +415,19 @@ function listLivingOrgClass () {
  * @return {String}
  *
  */
+ //var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
 
+function favoritePlanet (currentPlanet) {
+  
+  var randomPlanet = planets[Math.floor(Math.random()*planets.length)];
+  //when using indexOf to check if the planet IS NOT in the list use -1
+  if (planets.indexOf(currentPlanet)=== -1) {
+    return currentPlanet + " is not a planet!";
+  }else {
+    return "I'm from " + currentPlanet + ", but I wish I could go to " + randomPlanet;
+  }
+
+}
 
 /* Step 27
  *
@@ -430,8 +451,21 @@ function listLivingOrgClass () {
  *   earnMoney
  *
  */
+function Person (name, money, age, gender) {
 
+  this.name = name;
+  this.money = money;
+  this.age = age;
+  this.gender = gender; 
 
+}
+Person.prototype.spendMoney = function (price) {
+  this.money = this.money - price;
+}
+
+Person.prototype.earnMoney = function(price) {
+  this.money = this.money + price;
+}
 /* Step 28
  *
  * Define a function named "purchaseLaptop" that takes
