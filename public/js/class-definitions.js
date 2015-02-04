@@ -316,7 +316,9 @@ function addNumbers (Number, Numb) {
  * @return {Bool}
  *
  */
-
+function installLinux (distros) {
+  return linuxFlavors.indexOf(distros) !== -1;
+}
 
 /* Step 23
  *
