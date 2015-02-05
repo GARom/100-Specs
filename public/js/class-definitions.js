@@ -649,7 +649,7 @@ PrincessLeia.prototype = Object.create(Person.prototype, {
 PrincessLeia.prototype.shootsGun = function () {
   this.isInTrouble = false;
   return "Leia shoots her gun wildly";
-}
+};
 
 PrincessLeia.prototype.getsInTrouble = function () {
   this.isInTrouble = true;
@@ -664,7 +664,7 @@ PrincessLeia.prototype.marries = function (husband) {
   }else {
     return false;
   }
-}
+};
 /* Step 34
  *
  * Define a class named "Stapler" with properties "color"
@@ -682,7 +682,18 @@ PrincessLeia.prototype.marries = function (husband) {
  *   staplePapers
  *
  */
+function Stapler (color) {
+  this.color = color;
+  this.maxPapers = 4;
+}
 
+Stapler.prototype.staplePapers = function (somePapers) {
+  if (this.maxPapers >= somePapers) {
+    return true;
+  }else{
+    return false;
+  }
+}
 
 /* Step 35
  *
