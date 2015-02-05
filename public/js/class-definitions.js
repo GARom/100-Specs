@@ -557,22 +557,22 @@ Pen.prototype.write = function (message) {
  *   grow
  * 
  */
-function Garden (plantsTotal) {
 
+function Garden(plantsTotal) {
   this.plantsTotal = plantsTotal;
   this.isWatered = false;
 }
 
 Garden.prototype.water = function() {
   this.isWatered = true;
-
 };
 
 Garden.prototype.grow = function() {
-  if (this.isWatered) {
-    this.plantsTotal++;
-    this.isWatered = false;
+  if (this.isWatered === false) {
+    return false;
   }
+    this.plantsTotal++;
+    this.isWatered;
 };
 /* Step 32
  *
@@ -590,8 +590,17 @@ Garden.prototype.grow = function() {
  *   removePlanet
  *
  */
+function SolarSystem () {
+  this.planets = [];
+}
 
+SolarSystem.prototype.addPlanet = function (planet) {
+  this.planets.push(planet);
+}
 
+SolarSystem.prototype.removePlanet = function (planet) {
+  this.planets.splice(this.planets.indexOf(planet), 1);
+}
 /* Step 33
  *
  * Define a class named "PrincessLeia" that is a subclass of "Person"
