@@ -3,7 +3,7 @@
  * Declare a variable named "unicorn"
  *
  */
-var unicorn = "";
+var unicorn = null;
 
 /* Step 2
  *
@@ -633,8 +633,38 @@ SolarSystem.prototype.removePlanet = function (planet) {
  *   marries
  *
  */
+function PrincessLeia (name, money, age, gender) {
 
+  this.isInTrouble = null;
 
+  Person.call(this, name, money, age, gender);
+}
+
+PrincessLeia.prototype = Object.create(Person.prototype, {
+  constructor : {
+    value : Person
+  }
+});
+
+PrincessLeia.prototype.shootsGun = function () {
+  this.isInTrouble = false;
+  return "Leia shoots her gun wildly";
+}
+
+PrincessLeia.prototype.getsInTrouble = function () {
+  this.isInTrouble = true;
+  return "Help me Obi-wan Kenobi, you're my only hope";
+};
+
+PrincessLeia.prototype.marries = function (husband) {
+  if (husband == "Han Solo") {
+    return true;
+  }else if (husband == "Luke Skywalker") {
+    return "Gross!";
+  }else {
+    return false;
+  }
+}
 /* Step 34
  *
  * Define a class named "Stapler" with properties "color"
