@@ -733,7 +733,47 @@ Stapler.prototype.staplePapers = function (somePapers) {
  *   addDiscovery
  *   
  */
+function Scientist (name, money, age, gender) {
+  this.disciplines = [];
+  this.discoveries = [];
 
+  Person.call(this, name, money, age, gender);
+}
+
+Scientist.prototype = Object.create(Person.prototype, {
+  constructor : {
+    value : Person
+  }
+});
+
+Scientist.prototype.addDiscipline = function (newDiscovery) {
+  this.disciplines.push(newDiscovery);
+
+  return this.disciplines;
+};
+
+Scientist.prototype.checkDiscipline = function (newDiscovery) {
+  return this.disciplines.indexOf(newDiscovery) !== -1;
+};
+
+Scientist.prototype.addDiscovery = function(newDiscovery) {
+  this.discoveries.push(newDiscovery);
+  var resultDiscovery = "I discovered ";
+
+  if (this.discoveries.length === 1) {
+    resultDiscovery = resultDiscovery + this.discoveries[0] + ".";
+  }
+  if (this.discoveries.length === 2) {
+    resultDiscovery = resultDiscovery + this.discoveries[0] + " and " + this.discoveries[1] + ".";
+  }
+  if (this.discoveries.length === 3) {
+    for (var i = 0; i < this.discoveries.length - 1; i ++) {
+      resultDiscovery = resultDiscovery + this.discoveries[i] + ", ";
+    }
+    resultDiscovery = resultDiscovery + "and " + this.discoveries[this.discoveries.length-1] + ".";
+  }
+  return resultDiscovery;
+};
 
 /* Step 36
  *
